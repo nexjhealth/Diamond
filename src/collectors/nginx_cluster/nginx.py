@@ -32,10 +32,10 @@ import re
 import diamond.collector
 
 
-class NginxCollector(diamond.collector.Collector):
+class NginxNodeCollector(diamond.collector.Collector):
 
     def process_config(self):
-        super(NginxCollector, self).process_config()
+        super(NginxNodeCollector, self).process_config()
         if 'url' in self.config:
             self.config['urls'].append(self.config['url'])
 
@@ -54,14 +54,14 @@ class NginxCollector(diamond.collector.Collector):
                 self.urls[''] = url
 
     def get_default_config_help(self):
-        config_help = super(NginxCollector, self).get_default_config_help()
+        config_help = super(NginxNodeCollector, self).get_default_config_help()
         config_help.update({
             'urls': 'Nginx Nodes Enabled',
         })
         return config_help
 
     def get_default_config(self):
-        config = super(NginxCollector, self).get_default_config()
+        config = super(NginxNodeCollector, self).get_default_config()
         config.update({
             'path': 'nginx',
             'urls': ['nginx1 http://127.0.0.1:8080/nginx_status']
