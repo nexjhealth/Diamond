@@ -10,7 +10,7 @@ from mock import patch
 
 from diamond.collector import Collector
 
-from nginx import NginxNodeCollector
+from nginx_cluster import NginxNodeCollector
 
 ##########################################################################
 
